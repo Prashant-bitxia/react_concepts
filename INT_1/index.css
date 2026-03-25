@@ -1,0 +1,12 @@
+body {
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: crosshair;
+}
+.circle {
+  border-radius: 50%;
+  border: 2px solid black;
+  position: absolute;
+  pointer-events: none;
+}
