@@ -93,7 +93,7 @@ console.log(nested.flat()); // [1, 2, 3, [4, 5]] (Default: 1 level)
 console.log(nested.flat(2)); // [1, 2, 3, 4, 5] (2 levels)
 
 const superNested = [1, [2, [3, [4, [5]]]]];
-console.log("Flatten array by superNested.flat",superNested.flat(Infinity)); // [1, 2, 3, 4, 5]
+console.log("Flatten array by superNested.flat", superNested.flat(Infinity)); // [1, 2, 3, 4, 5]
 
 // -------- by own method -----------------------
 function deepFlatten(arr) {
@@ -103,12 +103,23 @@ function deepFlatten(arr) {
 }
 
 const deeplyNested = [1, [2, [3, 4], 5]];
-console.log("Deep Flatten array",deepFlatten(deeplyNested)); // [1, 2, 3, 4, 5]
+console.log("Deep Flatten array", deepFlatten(deeplyNested)); // [1, 2, 3, 4, 5]
 
 // -------> to run quokka extension run this command ALT+Q
 
 // ----------------> Remove the duplicates from the array <------------------------------------------------
+
+// ------> 1 way
 const numbers = [1, 2, 2, 3, 4, 4, 5];
-// const unique = [...new Set(numbers)];
 const unique = [...new Set(numbers)];
-console.log("Remove duplicates array elements",unique);
+console.log("Remove duplicates array elements", unique);
+
+// ------> 2 way
+
+const uniquieArr = numbers.reduce((acc, curr) => {
+  if (!acc.includes(curr)) acc.push(curr);
+
+  return acc;
+}, []);
+
+console.log("unique arrays by reduce method => ", uniquieArr);
