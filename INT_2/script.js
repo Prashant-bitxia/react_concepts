@@ -123,3 +123,43 @@ const uniquieArr = numbers.reduce((acc, curr) => {
 }, []);
 
 console.log("unique arrays by reduce method => ", uniquieArr);
+
+// ======= 7/04/26================================================================
+
+// Clousre questions
+// like input → cnsole.log( computeAmount().lacs(15).crore(1).value()   )
+
+// output→ 11500000
+
+function computeAmount() {
+  var amount = 0;
+
+  function thousands(val) {
+    amount += val * 1000;
+    return api;
+  }
+
+  function lakhs(val) {
+    amount += val * 100000;
+    return api;
+  }
+
+  function crore(val) {
+    amount += val * 10000000;
+    return api;
+  }
+
+  function getValue() {
+    return "Value -> " + amount;
+  }
+
+  const api = { thousands, lakhs, crore, getValue };
+
+  return api;
+}
+
+const result = computeAmount();
+
+console.log(result.thousands(1).getValue());
+
+
